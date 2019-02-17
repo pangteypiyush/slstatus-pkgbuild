@@ -1,0 +1,14 @@
+pkgbase = slstatus
+	pkgdesc = slstatus by suckless
+	pkgver = r552.b14e039
+	pkgrel = 1
+	url = https://tools.suckless.org/slstatus
+	arch = x86_64
+	license = ISC
+	source = git://git.suckless.org/slstatus
+	source = config.h
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = slstatus
+
