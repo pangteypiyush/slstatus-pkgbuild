@@ -7,7 +7,7 @@ pkgdesc="slstatus by suckless"
 arch=('x86_64')
 url="https://tools.suckless.org/slstatus"
 license=('ISC')
-makedepeds=('base-devel')
+makedepends=('make' 'libx11')
 source=(
     "git://git.suckless.org/slstatus"
     "config.h"
