@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -63,8 +63,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ netspeed_rx, "ﯲ %s",    "enp8s0"          },
-	{ netspeed_tx, " ﯴ %s",   "enp8s0"          },
-	{ ram_perc,    "  %s%%", NULL              },
-	{ datetime,    "  %s",   "%a %d%b %I:%M%p" },
+	{ netspeed_rx,   "ﯲ %s",     "enp2s0" },
+	{ netspeed_tx,   " ﯴ %s",    "enp2s0" },
+	{ run_command,   " %s%%",      "RAW=`amixer -c 1 -M -D pulse get Master`; VOL=`echo $RAW | sed  -n 's/.*\\[\\([[:digit:]]\\+\\)%\\].*/\\1/p' | head -1`; if [[ ` echo $RAW | grep -m 1 -o -E '\\[off\\]'` ]]; then echo -n ﱝ; else case $VOL in [0-9]|[0-1][0-9]|2[0-5]) echo -n 奄;; 2[6-9]|[3-4][0-9]) echo -n 奔;; [5-6][0-9]|7[0-5]) echo -n 墳;; *) echo -n ;; esac fi; echo -n \" $VOL\";" },
+	{ ram_perc,      "  %s%%",  NULL },
+	{ datetime,      "  %s",    "%a %d%b %I:%M%p" },
 };
